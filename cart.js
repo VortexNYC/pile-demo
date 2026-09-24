@@ -2,7 +2,7 @@
 function cartTotal(prices) {
   let total = 0;
   for (const p of prices) {
-    total += p;
+    total += Number(p);
   }
   return total;
 }
