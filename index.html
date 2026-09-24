@@ -6,12 +6,16 @@
       <li>Sticker pack — $4.99</li>
       <li>Desk mat — $29.00</li>
     </ul>
+    <input id="promo" placeholder="Promo code" />
     <button id="checkout">Checkout</button>
     <p id="total"></p>
     <script src="cart.js"></script>
+    <script src="promo.js"></script>
     <script>
       document.getElementById("checkout").addEventListener("click", () => {
-        const total = cartTotal(["4.99", "29.00"]);
+        let total = cartTotal(["4.99", "29.00"]);
+        const code = document.getElementById("promo").value;
+        if (code) total = applyPromo(total, code);
         document.getElementById("total").textContent = "Total: $" + total.toFixed(2);
       });
     </script>
