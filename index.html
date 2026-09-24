@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Acme Store — Checkout</h1>
+    <ul>
+      <li>Sticker pack — $4.99</li>
+      <li>Desk mat — $29.00</li>
+    </ul>
+    <button id="checkout">Checkout</button>
+    <p id="total"></p>
+    <script src="cart.js"></script>
+    <script>
+      document.getElementById("checkout").addEventListener("click", () => {
+        const total = cartTotal(["4.99", "29.00"]);
+        document.getElementById("total").textContent = "Total: $" + total.toFixed(2);
+      });
+    </script>
+  </body>
+</html>
