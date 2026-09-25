@@ -15,7 +15,8 @@
       document.getElementById("checkout").addEventListener("click", () => {
         let total = cartTotal(["4.99", "29.00"]);
         const code = document.getElementById("promo").value;
-        if (code) total = applyPromo(total, code);
+        const discounted = code ? applyPromo(total, code) : null;
+        if (discounted !== null) total = discounted;
         document.getElementById("total").textContent = "Total: $" + total.toFixed(2);
       });
     </script>
